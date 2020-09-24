@@ -6,7 +6,7 @@ import java.text.ParseException;
 import org.yank.desafio.produtoService.produtoService;
 
 public class main {
-	public main(String[] args) throws IOException, ParseException {
+	public static void main(String[] args) throws IOException, ParseException {
 		produtoService service = new produtoService();
 		
 		System.out.println("Coletando os dados");
