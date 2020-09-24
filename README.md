@@ -7,6 +7,8 @@ Projeto desenvolvido para consumir a sessão de 'Celulares e Smartphones' do e-c
 - JSOUP
 - SQLite
 
+OBS.: Utilizado o regex para formatação das strings e tratamento na coleta dos dados.
+
 # Instalação
 
 $ git clone https://github.com/nathaliagiul/consultaEcommerce.git
