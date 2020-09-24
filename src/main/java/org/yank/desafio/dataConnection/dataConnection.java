@@ -7,10 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class dataConnection {
+	private static final String URL_BD = "jdbc:sqlite:C:/SQLite/db/";
 
     public static void createNewDatabase(String fileName) {
 
-        String url = "jdbc:sqlite:D:/SQLite/db/" + fileName;
+        String url = URL_BD + fileName;
 
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
@@ -25,7 +26,7 @@ public class dataConnection {
     }
     
     public static void createNewTable() {
-        String url = "jdbc:sqlite:D:/SQLite/db/ecommerce.db";
+        String url = URL_BD+"ecommerce.db";
         
         String sql = 
         		"CREATE TABLE IF NOT EXISTS product(\n"
@@ -47,6 +48,20 @@ public class dataConnection {
             System.out.println(e.getMessage());
         }
     }
+    
+    /**
+	 * Método responsável pela conexão com o BD
+	 */
+	 public Connection connect() {
+	        String url = URL_BD+"ecommerce.db";
+	        Connection conn = null;
+	        try {
+	            conn = DriverManager.getConnection(url);
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	        return conn;
+	    }
 
 
     public static void main(String[] args) {

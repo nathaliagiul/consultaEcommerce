@@ -13,7 +13,7 @@ $ git clone https://github.com/nathaliagiul/consultaEcommerce.git
 
 # Configuração
 
-Necessário ajustar a url na classe dataConnection.java conforme a sua instalação do SQLite e na classe produtoRepository.java no método connect().
+Necessário ajustar a url na classe dataConnection.java conforme a sua instalação do SQLite.
 
 # Execução
 

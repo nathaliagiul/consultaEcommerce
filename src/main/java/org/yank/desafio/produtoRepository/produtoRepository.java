@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.yank.desafio.dataConnection.dataConnection;
 import org.yank.desafio.produtoEntity.Produto;
 
 public class produtoRepository {
@@ -15,14 +16,8 @@ public class produtoRepository {
 	 * Método responsável pela conexão com o BD
 	 */
 	 private Connection connect() {
-	        String url = "jdbc:sqlite:D:/SQLite/db/ecommerce.db";
-	        Connection conn = null;
-	        try {
-	            conn = DriverManager.getConnection(url);
-	        } catch (SQLException e) {
-	            System.out.println(e.getMessage());
-	        }
-	        return conn;
+	        dataConnection conn = new dataConnection();
+	        return conn.connect();
 	    }
 
 	 /**
