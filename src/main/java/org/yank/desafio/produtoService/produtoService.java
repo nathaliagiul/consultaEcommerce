@@ -219,4 +219,12 @@ public class produtoService{
 		dao.consultaProdutoMaiorDesconto();
 		
 	}
+	
+	/**
+	 * Método responsável por listar todos os produtos
+	 */
+	public void listProdutos() {
+		produtoRepository dao = new produtoRepository();
+		dao.listProdutos();		
+	}
 }

@@ -121,4 +121,29 @@ public class produtoRepository {
 	            System.out.println(e.getMessage());
 	        }
 	}
+	
+	/**
+	 * Método responsável por realizar a consulta e buscar todos os produtos
+	 */
+	public void listProdutos() {
+		String sql = "SELECT * FROM product;";
+		
+		try (Connection conn = this.connect();
+	             Statement stmt  = conn.createStatement();
+	             ResultSet rs    = stmt.executeQuery(sql)){
+	            
+	            while (rs.next()) {
+	                System.out.println("Produto: "+rs.getString("nome") +  "\n" +
+	                				   "URL: "+rs.getString("url") +  "\n" +
+	                				   "Categoria: "+rs.getString("categoria") +  "\n" +
+	                				   "Cor: "+rs.getString("cor") +  "\n" +
+	                                   "Desconto: "+rs.getInt("desconto")+"%" +  "\n" +
+	                                   "Classificacao: "+rs.getInt("classificacao") +  "\n" +
+	                                   "Preço: R$"+rs.getDouble("preco")+  "\n"
+	                                   );
+	            }
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }		
+	}
 }

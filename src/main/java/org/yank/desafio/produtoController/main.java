@@ -20,5 +20,8 @@ public class main {
 		
 		System.out.println("\nProduto com maior desconto");
 		service.consultaProdutoMaiorDesconto();
+		
+		System.out.println("\nTodos os produtos");
+		service.listProdutos();
 	}
 }
